@@ -1,10 +1,12 @@
-﻿using System.ComponentModel;
+﻿using System;
+using System.ComponentModel;
 using System.Drawing;
 using System.Runtime.CompilerServices;
 using System.Windows.Forms;
 using MooBoo.ActiveWindowHook;
 using MooBoo.Annotations;
 using MooBoo.Resources;
+using MooBoo.Utility;
 
 namespace MooBoo.ViewModel
 {
@@ -39,6 +41,10 @@ namespace MooBoo.ViewModel
         private void OnActiveWindowChanged(object sender, ActiveWindowChangedEventArgs e)
         {
             //TODO dinner is served bitchers
+            //Scheduler.Instance.Schedule("pidor", TimeSpan.FromSeconds(6), () =>
+            //{
+            //    Console.WriteLine(DateTime.Now);
+            //});
         }
 
         #endregion

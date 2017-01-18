@@ -67,6 +67,7 @@
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="Properties\Annotations.cs" />
+    <Compile Include="Utility\Scheduler.cs" />
     <Compile Include="ViewModel\MooBooTrayAppViewModel.cs" />
     <Compile Include="View\MooBooTrayApp.xaml.cs">
       <DependentUpon>MooBooTrayApp.xaml</DependentUpon>

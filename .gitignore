@@ -4,3 +4,5 @@
 /MooBoo.Demo/bin
 /MooBoo.Demo/obj
 */*.cache
+*/obj
+*/bin
