@@ -1,12 +1,15 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.ComponentModel;
 using System.Drawing;
+using System.Linq;
 using System.Runtime.CompilerServices;
-using System.Windows.Forms;
 using MooBoo.ActiveWindowHook;
-using MooBoo.Annotations;
+using MooBoo.Model;
+using MooBoo.Properties;
 using MooBoo.Resources;
 using MooBoo.Utility;
+using ToggleSandbox.Services;
 
 namespace MooBoo.ViewModel
 {
@@ -14,7 +17,16 @@ namespace MooBoo.ViewModel
     {
         #region Fileds
 
+
         private readonly ActiveWindowHooker windowHooker = new ActiveWindowHooker();
+        private List<WindowChangeEntry> entries = new List<WindowChangeEntry>();
+        private object locker = new object();
+        //TODO remove this logic from here to MooBoo.ToggleWrapper
+        private readonly DateTime lastToggleUpdate = new DateTime();
+        //TODO remove this logic from here to MooBoo.ToggleWrapper
+        private readonly LogService toggleService = new LogService("STRINGTOKEN");
+
+
         #endregion
 
         #region Constructor
@@ -23,6 +35,8 @@ namespace MooBoo.ViewModel
         {
             windowHooker.ActiveWindowChanged += OnActiveWindowChanged;
             windowHooker.Init();
+
+            Scheduler.Instance.Schedule("ToggleServiceSender", TimeSpan.FromSeconds(20), OnSendToToggleService);
         }
 
         #endregion
@@ -40,11 +54,38 @@ namespace MooBoo.ViewModel
 
         private void OnActiveWindowChanged(object sender, ActiveWindowChangedEventArgs e)
         {
-            //TODO dinner is served bitchers
-            //Scheduler.Instance.Schedule("pidor", TimeSpan.FromSeconds(6), () =>
-            //{
-            //    Console.WriteLine(DateTime.Now);
-            //});
+            lock (locker)
+            {
+                entries.Add(new WindowChangeEntry(e.ProcessFileName, "Good", DateTime.Now));
+            }
+        }
+
+        //TODO remove this logic from here to MooBoo.ToggleWrapper
+        //TODO redesign begin-end period calculation algorithm
+        private void OnSendToToggleService()
+        {
+            List<WindowChangeEntry> entriesToProcess = null;
+            var time = DateTime.Now;
+            lock (locker)
+            {
+                entries = entries.Where(e => e.SwitchToTime > lastToggleUpdate).ToList();
+                entriesToProcess = entries.ToList();
+            }
+            var count = entriesToProcess.Count;
+
+            for (var i = 0; i < count - 1; i++)
+            {
+                toggleService.Add(
+                    entriesToProcess[i].FileName,
+                    entriesToProcess[i].SwitchToTime,
+                    entriesToProcess[i + 1].SwitchToTime,
+                    entriesToProcess[i].Category == "Good");
+            }
+            toggleService.Add(entriesToProcess[count].FileName,
+                    entriesToProcess[count].SwitchToTime,
+                    time,
+                    entriesToProcess[count].Category == "Good");
+
         }
 
         #endregion

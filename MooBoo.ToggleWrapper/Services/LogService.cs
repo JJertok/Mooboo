@@ -1,12 +1,8 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using Toggl;
 using Toggl.Extensions;
 
-namespace Mooboo.ToggleWrapper.Services
+namespace ToggleSandbox.Services
 {
     public class LogService : BaseAPI
     {
