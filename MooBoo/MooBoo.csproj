@@ -66,6 +66,7 @@
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="Model\WindowChangeEntry.cs" />
     <Compile Include="Properties\Annotations.cs" />
     <Compile Include="Utility\Scheduler.cs" />
     <Compile Include="ViewModel\MooBooTrayAppViewModel.cs" />
@@ -110,6 +111,10 @@
     <ProjectReference Include="..\MooBoo.Resources\MooBoo.Resources.csproj">
       <Project>{A2406863-E0ED-4A72-BB21-EB68B14DC595}</Project>
       <Name>MooBoo.Resources</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\MooBoo.ToggleWrapper\MooBoo.ToggleWrapper.csproj">
+      <Project>{96E3DFE1-0353-4BB6-8B72-5D913857EC1F}</Project>
+      <Name>MooBoo.ToggleWrapper</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

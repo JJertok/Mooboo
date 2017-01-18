@@ -1,7 +1,6 @@
 ﻿using System;
 using System.Windows;
 using System.Windows.Forms;
-using MooBoo.Resources;
 using MooBoo.ViewModel;
 
 namespace MooBoo.View

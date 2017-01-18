@@ -48,6 +48,28 @@ namespace MooBoo.ViewModel
             get { return Icons.TrayIcon; }
         }
 
+        
+        public string ApiTokenProperty
+        {
+            get
+            {
+                try
+                {
+                    var apiToken = Properties.Settings.Default["ApiToken"];
+                    
+                    return apiToken.ToString();
+                } catch(Exception e)
+                { }
+                return string.Empty;
+            }
+
+            set
+            {
+                Properties.Settings.Default["ApiToken"] = value;
+                Properties.Settings.Default.Save();
+            }
+        }
+
         #endregion
 
         #region Methods
@@ -88,6 +110,8 @@ namespace MooBoo.ViewModel
 
         }
 
+
+        
         #endregion
 
         #region INPC
