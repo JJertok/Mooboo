@@ -16,3 +16,6 @@ c:\users\iggytoto\documents\visual studio 2015\Projects\MooBoo\MooBoo\bin\Debug\
 c:\users\iggytoto\documents\visual studio 2015\Projects\MooBoo\MooBoo\bin\Debug\MooBoo.Resources.pdb
 c:\users\iggytoto\documents\visual studio 2015\Projects\MooBoo\MooBoo\obj\Debug\View\MooBooTrayApp.g.cs
 c:\users\iggytoto\documents\visual studio 2015\Projects\MooBoo\MooBoo\obj\Debug\View\MooBooTrayApp.baml
+C:\Users\1\Documents\Visual Studio 2015\Projects\Mooboo\MooBoo\bin\Debug\MooBoo.exe.config
+C:\Users\1\Documents\Visual Studio 2015\Projects\Mooboo\MooBoo\obj\Debug\MooBoo.exe
+C:\Users\1\Documents\Visual Studio 2015\Projects\Mooboo\MooBoo\obj\Debug\MooBoo.pdb

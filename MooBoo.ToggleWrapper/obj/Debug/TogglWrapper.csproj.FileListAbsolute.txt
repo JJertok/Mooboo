@@ -1,0 +1,9 @@
+c:\users\1\documents\visual studio 2015\Projects\ToggleSandbox\ToggleSandbox\obj\Debug\TogglWrapper.csprojResolveAssemblyReference.cache
+c:\users\1\documents\visual studio 2015\Projects\ToggleSandbox\ToggleSandbox\bin\Debug\ToggleSandbox.dll
+c:\users\1\documents\visual studio 2015\Projects\ToggleSandbox\ToggleSandbox\bin\Debug\ToggleSandbox.pdb
+c:\users\1\documents\visual studio 2015\Projects\ToggleSandbox\ToggleSandbox\bin\Debug\Newtonsoft.Json.dll
+c:\users\1\documents\visual studio 2015\Projects\ToggleSandbox\ToggleSandbox\bin\Debug\Toggl.dll
+c:\users\1\documents\visual studio 2015\Projects\ToggleSandbox\ToggleSandbox\bin\Debug\Newtonsoft.Json.pdb
+c:\users\1\documents\visual studio 2015\Projects\ToggleSandbox\ToggleSandbox\bin\Debug\Newtonsoft.Json.xml
+c:\users\1\documents\visual studio 2015\Projects\ToggleSandbox\ToggleSandbox\obj\Debug\ToggleSandbox.dll
+c:\users\1\documents\visual studio 2015\Projects\ToggleSandbox\ToggleSandbox\obj\Debug\ToggleSandbox.pdb

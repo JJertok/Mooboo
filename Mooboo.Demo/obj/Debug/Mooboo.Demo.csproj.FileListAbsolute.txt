@@ -1,0 +1,12 @@
+C:\Users\1\Documents\Visual Studio 2015\Projects\Mooboo\Mooboo.Demo\bin\Debug\Mooboo.Demo.exe.config
+C:\Users\1\Documents\Visual Studio 2015\Projects\Mooboo\Mooboo.Demo\bin\Debug\Mooboo.Demo.exe
+C:\Users\1\Documents\Visual Studio 2015\Projects\Mooboo\Mooboo.Demo\bin\Debug\Mooboo.Demo.pdb
+C:\Users\1\Documents\Visual Studio 2015\Projects\Mooboo\Mooboo.Demo\bin\Debug\ToggleSandbox.dll
+C:\Users\1\Documents\Visual Studio 2015\Projects\Mooboo\Mooboo.Demo\bin\Debug\Toggl.dll
+C:\Users\1\Documents\Visual Studio 2015\Projects\Mooboo\Mooboo.Demo\bin\Debug\Newtonsoft.Json.dll
+C:\Users\1\Documents\Visual Studio 2015\Projects\Mooboo\Mooboo.Demo\bin\Debug\ToggleSandbox.pdb
+C:\Users\1\Documents\Visual Studio 2015\Projects\Mooboo\Mooboo.Demo\bin\Debug\Newtonsoft.Json.pdb
+C:\Users\1\Documents\Visual Studio 2015\Projects\Mooboo\Mooboo.Demo\bin\Debug\Newtonsoft.Json.xml
+C:\Users\1\Documents\Visual Studio 2015\Projects\Mooboo\Mooboo.Demo\obj\Debug\Mooboo.Demo.csprojResolveAssemblyReference.cache
+C:\Users\1\Documents\Visual Studio 2015\Projects\Mooboo\Mooboo.Demo\obj\Debug\Mooboo.Demo.exe
+C:\Users\1\Documents\Visual Studio 2015\Projects\Mooboo\Mooboo.Demo\obj\Debug\Mooboo.Demo.pdb
