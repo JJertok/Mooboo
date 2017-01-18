@@ -1,3 +1,6 @@
 /packages
-/MooBoo/bin/Debug
-/MooBoo/obj/Debug
+/MooBoo/bin
+/MooBoo/obj
+/MooBoo.Demo/bin
+/MooBoo.Demo/obj
+*/*.cache
