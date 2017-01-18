@@ -1,0 +1,5 @@
+c:\Users\Iggytoto\documents\visual studio 2015\Projects\MooBoo\MooBoo.ActiveWindowHook\bin\Debug\MooBoo.ActiveWindowHook.dll
+c:\Users\Iggytoto\documents\visual studio 2015\Projects\MooBoo\MooBoo.ActiveWindowHook\bin\Debug\MooBoo.ActiveWindowHook.pdb
+c:\Users\Iggytoto\documents\visual studio 2015\Projects\MooBoo\MooBoo.ActiveWindowHook\obj\Debug\MooBoo.ActiveWindowHook.csprojResolveAssemblyReference.cache
+c:\Users\Iggytoto\documents\visual studio 2015\Projects\MooBoo\MooBoo.ActiveWindowHook\obj\Debug\MooBoo.ActiveWindowHook.dll
+c:\Users\Iggytoto\documents\visual studio 2015\Projects\MooBoo\MooBoo.ActiveWindowHook\obj\Debug\MooBoo.ActiveWindowHook.pdb

@@ -1,0 +1,7 @@
+c:\Users\Iggytoto\documents\visual studio 2015\Projects\MooBoo\MooBoo.Resources\bin\Debug\MooBoo.Resources.dll
+c:\Users\Iggytoto\documents\visual studio 2015\Projects\MooBoo\MooBoo.Resources\bin\Debug\MooBoo.Resources.pdb
+c:\Users\Iggytoto\documents\visual studio 2015\Projects\MooBoo\MooBoo.Resources\obj\Debug\MooBoo.Resources.csprojResolveAssemblyReference.cache
+c:\Users\Iggytoto\documents\visual studio 2015\Projects\MooBoo\MooBoo.Resources\obj\Debug\MooBoo.Resources.Icons.resources
+c:\Users\Iggytoto\documents\visual studio 2015\Projects\MooBoo\MooBoo.Resources\obj\Debug\MooBoo.Resources.csproj.GenerateResource.Cache
+c:\Users\Iggytoto\documents\visual studio 2015\Projects\MooBoo\MooBoo.Resources\obj\Debug\MooBoo.Resources.dll
+c:\Users\Iggytoto\documents\visual studio 2015\Projects\MooBoo\MooBoo.Resources\obj\Debug\MooBoo.Resources.pdb

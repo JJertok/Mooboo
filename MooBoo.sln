@@ -1,0 +1,34 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.25420.1
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MooBoo", "MooBoo\MooBoo.csproj", "{18AF5DF5-57AE-402C-A7AE-FB0E8D0D6A6B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MooBoo.ActiveWindowHook", "MooBoo.ActiveWindowHook\MooBoo.ActiveWindowHook.csproj", "{472F6B6E-AEB1-4F1F-B29C-8E9EEEA75CA0}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MooBoo.Resources", "MooBoo.Resources\MooBoo.Resources.csproj", "{A2406863-E0ED-4A72-BB21-EB68B14DC595}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{18AF5DF5-57AE-402C-A7AE-FB0E8D0D6A6B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{18AF5DF5-57AE-402C-A7AE-FB0E8D0D6A6B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{18AF5DF5-57AE-402C-A7AE-FB0E8D0D6A6B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{18AF5DF5-57AE-402C-A7AE-FB0E8D0D6A6B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{472F6B6E-AEB1-4F1F-B29C-8E9EEEA75CA0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{472F6B6E-AEB1-4F1F-B29C-8E9EEEA75CA0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{472F6B6E-AEB1-4F1F-B29C-8E9EEEA75CA0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{472F6B6E-AEB1-4F1F-B29C-8E9EEEA75CA0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A2406863-E0ED-4A72-BB21-EB68B14DC595}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A2406863-E0ED-4A72-BB21-EB68B14DC595}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A2406863-E0ED-4A72-BB21-EB68B14DC595}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A2406863-E0ED-4A72-BB21-EB68B14DC595}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
