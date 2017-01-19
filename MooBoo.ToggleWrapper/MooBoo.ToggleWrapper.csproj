@@ -51,6 +51,7 @@
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Services\BaseAPI.cs" />
+    <Compile Include="Services\LogBuffer.cs" />
     <Compile Include="Services\LogService.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -58,6 +59,12 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Models\" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Mooboo.Utilities\Mooboo.Utilities.csproj">
+      <Project>{a17eaa85-b11f-45f1-8f32-e7d75f01a054}</Project>
+      <Name>Mooboo.Utilities</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

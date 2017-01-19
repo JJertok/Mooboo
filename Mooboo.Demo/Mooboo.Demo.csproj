@@ -54,6 +54,10 @@
       <Project>{96e3dfe1-0353-4bb6-8b72-5d913857ec1f}</Project>
       <Name>MooBoo.ToggleWrapper</Name>
     </ProjectReference>
+    <ProjectReference Include="..\Mooboo.Utilities\Mooboo.Utilities.csproj">
+      <Project>{a17eaa85-b11f-45f1-8f32-e7d75f01a054}</Project>
+      <Name>Mooboo.Utilities</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
