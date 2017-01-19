@@ -66,11 +66,12 @@ namespace MooBoo.ActiveWindowHook
             GetWindowThreadProcessId(handle, out pid);
             var p = Process.GetProcessById((int)pid);
 
-            if (GetWindowText(handle, Buff, nChars) > 0)
-            {
-                return Buff.ToString().Split('\\').Last();
-            }
-            return null;
+            return p.MainModule.FileName.Split('\\').Last();
+            //if (GetWindowText(handle, Buff, nChars) > 0)
+            //{
+            //    return Buff.ToString().Split('\\').Last();
+            //}
+            //return null;
         }
 
         private void WinEventProc(IntPtr hWinEventHook, uint eventType, IntPtr hwnd, int idObject, int idChild, uint dwEventThread, uint dwmsEventTime)
@@ -85,7 +86,7 @@ namespace MooBoo.ActiveWindowHook
         #endregion
 
         #region Events
-        
+
         public event EventHandler<ActiveWindowChangedEventArgs> ActiveWindowChanged;
 
         #endregion
