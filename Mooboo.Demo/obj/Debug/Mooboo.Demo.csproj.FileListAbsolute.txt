@@ -10,3 +10,5 @@ C:\Users\1\Documents\Visual Studio 2015\Projects\Mooboo\Mooboo.Demo\bin\Debug\Ne
 C:\Users\1\Documents\Visual Studio 2015\Projects\Mooboo\Mooboo.Demo\obj\Debug\Mooboo.Demo.csprojResolveAssemblyReference.cache
 C:\Users\1\Documents\Visual Studio 2015\Projects\Mooboo\Mooboo.Demo\obj\Debug\Mooboo.Demo.exe
 C:\Users\1\Documents\Visual Studio 2015\Projects\Mooboo\Mooboo.Demo\obj\Debug\Mooboo.Demo.pdb
+C:\Users\1\documents\visual studio 2015\Projects\Mooboo\Mooboo.Demo\bin\Debug\Mooboo.Utilities.dll
+C:\Users\1\documents\visual studio 2015\Projects\Mooboo\Mooboo.Demo\bin\Debug\Mooboo.Utilities.pdb

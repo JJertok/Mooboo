@@ -22,7 +22,7 @@ namespace MooBoo.Utilities
             var timer = new Timer((t) =>
             {
                 func.Invoke();
-            }, null, 0,(int) period.TotalMilliseconds);
+            }, null, (int)period.TotalMilliseconds,(int) period.TotalMilliseconds);
             timers.Add(key, timer);
             
             

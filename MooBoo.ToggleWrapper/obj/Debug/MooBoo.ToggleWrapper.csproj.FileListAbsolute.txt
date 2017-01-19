@@ -4,6 +4,8 @@ C:\Users\1\Documents\Visual Studio 2015\Projects\Mooboo\MooBoo.ToggleWrapper\bin
 C:\Users\1\Documents\Visual Studio 2015\Projects\Mooboo\MooBoo.ToggleWrapper\bin\Debug\Toggl.dll
 C:\Users\1\Documents\Visual Studio 2015\Projects\Mooboo\MooBoo.ToggleWrapper\bin\Debug\Newtonsoft.Json.pdb
 C:\Users\1\Documents\Visual Studio 2015\Projects\Mooboo\MooBoo.ToggleWrapper\bin\Debug\Newtonsoft.Json.xml
-C:\Users\1\Documents\Visual Studio 2015\Projects\Mooboo\MooBoo.ToggleWrapper\obj\Debug\MooBoo.ToggleWrapper.csprojResolveAssemblyReference.cache
 C:\Users\1\Documents\Visual Studio 2015\Projects\Mooboo\MooBoo.ToggleWrapper\obj\Debug\ToggleSandbox.dll
 C:\Users\1\Documents\Visual Studio 2015\Projects\Mooboo\MooBoo.ToggleWrapper\obj\Debug\ToggleSandbox.pdb
+C:\Users\1\Documents\Visual Studio 2015\Projects\Mooboo\MooBoo.ToggleWrapper\obj\Debug\MooBoo.ToggleWrapper.csprojResolveAssemblyReference.cache
+C:\Users\1\documents\visual studio 2015\Projects\Mooboo\MooBoo.ToggleWrapper\bin\Debug\Mooboo.Utilities.dll
+C:\Users\1\documents\visual studio 2015\Projects\Mooboo\MooBoo.ToggleWrapper\bin\Debug\Mooboo.Utilities.pdb
