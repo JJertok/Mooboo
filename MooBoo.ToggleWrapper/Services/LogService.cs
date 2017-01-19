@@ -22,6 +22,15 @@ namespace ToggleSandbox.Services
             Scheduler.Instance.Schedule("syncToggle", TimeSpan.FromSeconds(5), () => { Flush(); });
         }
         
+        public void Add(string Name, DateTime start, DateTime stop, bool IsGood)
+        {
+            logBuffer.Add(new Log
+            {
+                Name = Name, 
+                Start = start,
+                Stop = stop
+            });
+        }
         public void Add(Log log)
         {
             logBuffer.Add(log);
