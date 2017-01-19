@@ -5,3 +5,10 @@ c:\Users\Iggytoto\documents\visual studio 2015\Projects\MooBoo\MooBoo.Resources\
 c:\Users\Iggytoto\documents\visual studio 2015\Projects\MooBoo\MooBoo.Resources\obj\Debug\MooBoo.Resources.csproj.GenerateResource.Cache
 c:\Users\Iggytoto\documents\visual studio 2015\Projects\MooBoo\MooBoo.Resources\obj\Debug\MooBoo.Resources.dll
 c:\Users\Iggytoto\documents\visual studio 2015\Projects\MooBoo\MooBoo.Resources\obj\Debug\MooBoo.Resources.pdb
+D:\MyProjects\MooBoo\MooBoo.Resources\bin\Debug\MooBoo.Resources.dll
+D:\MyProjects\MooBoo\MooBoo.Resources\bin\Debug\MooBoo.Resources.pdb
+D:\MyProjects\MooBoo\MooBoo.Resources\obj\Debug\MooBoo.Resources.csprojResolveAssemblyReference.cache
+D:\MyProjects\MooBoo\MooBoo.Resources\obj\Debug\MooBoo.Resources.Icons.resources
+D:\MyProjects\MooBoo\MooBoo.Resources\obj\Debug\MooBoo.Resources.csproj.GenerateResource.Cache
+D:\MyProjects\MooBoo\MooBoo.Resources\obj\Debug\MooBoo.Resources.dll
+D:\MyProjects\MooBoo\MooBoo.Resources\obj\Debug\MooBoo.Resources.pdb

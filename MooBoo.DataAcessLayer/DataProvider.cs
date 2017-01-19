@@ -15,9 +15,10 @@ namespace MooBoo.DataAcessLayer
             {
                 return false;
             }
+            var newId = DataBase.Instance.Logs.Count == 0 ? 1 : DataBase.Instance.Logs.Max(m => m.Id) + 1;
             DataBase.Instance.Logs.Add(new LogItem
             {
-                Id = DataBase.Instance.Logs.Max(m => m.Id) + 1,
+                Id = newId,
                 CategoryId = obj.CategoryId,
                 FileName = obj.FileName,
                 Start = obj.Start,

@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Diagnostics;
+using System.Management;
 using System.Linq;
 using System.Runtime.InteropServices;
 using System.Text;
@@ -64,14 +65,35 @@ namespace MooBoo.ActiveWindowHook
             handle = GetForegroundWindow();
             uint pid;
             GetWindowThreadProcessId(handle, out pid);
-            var p = Process.GetProcessById((int)pid);
+            
+            return GetProcessPath((int)pid).Split('\\').Last();
+        }
 
-            return p.MainModule.FileName.Split('\\').Last();
-            //if (GetWindowText(handle, Buff, nChars) > 0)
-            //{
-            //    return Buff.ToString().Split('\\').Last();
-            //}
-            //return null;
+        private string GetProcessPath(int processId)
+        {
+            string MethodResult = "";
+            try
+            {
+                string Query = "SELECT ExecutablePath FROM Win32_Process WHERE ProcessId = " + processId;
+
+                using (ManagementObjectSearcher mos = new ManagementObjectSearcher(Query))
+                {
+                    using (ManagementObjectCollection moc = mos.Get())
+                    {
+                        string ExecutablePath = (from mo in moc.Cast<ManagementObject>() select mo["ExecutablePath"]).First().ToString();
+
+                        MethodResult = ExecutablePath;
+
+                    }
+
+                }
+
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+            }
+            return MethodResult;
         }
 
         private void WinEventProc(IntPtr hWinEventHook, uint eventType, IntPtr hwnd, int idObject, int idChild, uint dwEventThread, uint dwmsEventTime)

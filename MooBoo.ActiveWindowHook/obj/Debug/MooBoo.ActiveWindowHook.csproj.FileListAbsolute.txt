@@ -5,6 +5,6 @@ c:\Users\Iggytoto\documents\visual studio 2015\Projects\MooBoo\MooBoo.ActiveWind
 c:\Users\Iggytoto\documents\visual studio 2015\Projects\MooBoo\MooBoo.ActiveWindowHook\obj\Debug\MooBoo.ActiveWindowHook.pdb
 D:\MyProjects\MooBoo\MooBoo.ActiveWindowHook\bin\Debug\MooBoo.ActiveWindowHook.dll
 D:\MyProjects\MooBoo\MooBoo.ActiveWindowHook\bin\Debug\MooBoo.ActiveWindowHook.pdb
-D:\MyProjects\MooBoo\MooBoo.ActiveWindowHook\obj\Debug\MooBoo.ActiveWindowHook.csprojResolveAssemblyReference.cache
 D:\MyProjects\MooBoo\MooBoo.ActiveWindowHook\obj\Debug\MooBoo.ActiveWindowHook.dll
 D:\MyProjects\MooBoo\MooBoo.ActiveWindowHook\obj\Debug\MooBoo.ActiveWindowHook.pdb
+D:\MyProjects\MooBoo\MooBoo.ActiveWindowHook\obj\Debug\MooBoo.ActiveWindowHook.csprojResolveAssemblyReference.cache

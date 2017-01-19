@@ -39,6 +39,7 @@
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Drawing" />
+    <Reference Include="System.Management" />
     <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml" />
     <Reference Include="Microsoft.CSharp" />
@@ -108,6 +109,18 @@
       <Project>{472F6B6E-AEB1-4F1F-B29C-8E9EEEA75CA0}</Project>
       <Name>MooBoo.ActiveWindowHook</Name>
     </ProjectReference>
+    <ProjectReference Include="..\MooBoo.DataAcessLayer\MooBoo.DataAcessLayer.csproj">
+      <Project>{FDF5DE33-BE37-46BF-B615-7FB7BF52ACD9}</Project>
+      <Name>MooBoo.DataAcessLayer</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\MooBoo.Infrastructure\MooBoo.Infrastructure.csproj">
+      <Project>{8acd5ccc-14bc-4bcc-b68d-dd23e420d6a3}</Project>
+      <Name>MooBoo.Infrastructure</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\MooBoo.Model\MooBoo.Model.csproj">
+      <Project>{449C3C76-8520-4973-9384-3DCAE8E1328E}</Project>
+      <Name>MooBoo.Model</Name>
+    </ProjectReference>
     <ProjectReference Include="..\MooBoo.Resources\MooBoo.Resources.csproj">
       <Project>{A2406863-E0ED-4A72-BB21-EB68B14DC595}</Project>
       <Name>MooBoo.Resources</Name>
@@ -115,6 +128,10 @@
     <ProjectReference Include="..\MooBoo.ToggleWrapper\MooBoo.ToggleWrapper.csproj">
       <Project>{96E3DFE1-0353-4BB6-8B72-5D913857EC1F}</Project>
       <Name>MooBoo.ToggleWrapper</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Mooboo.Utilities\Mooboo.Utilities.csproj">
+      <Project>{a17eaa85-b11f-45f1-8f32-e7d75f01a054}</Project>
+      <Name>Mooboo.Utilities</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

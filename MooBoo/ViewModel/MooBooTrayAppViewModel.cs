@@ -5,7 +5,9 @@ using System.Drawing;
 using System.Linq;
 using System.Runtime.CompilerServices;
 using MooBoo.ActiveWindowHook;
+using MooBoo.DataAcessLayer;
 using MooBoo.Model;
+using MooBoo.Model.DataLayer;
 using MooBoo.Properties;
 using MooBoo.Resources;
 using MooBoo.Utility;
@@ -20,11 +22,12 @@ namespace MooBoo.ViewModel
 
         private readonly ActiveWindowHooker windowHooker = new ActiveWindowHooker();
         private List<WindowChangeEntry> entries = new List<WindowChangeEntry>();
+        private WindowChangeEntry previousEntry;
         private object locker = new object();
         //TODO remove this logic from here to MooBoo.ToggleWrapper
         private readonly DateTime lastToggleUpdate = new DateTime();
         //TODO remove this logic from here to MooBoo.ToggleWrapper
-        private readonly LogService toggleService = new LogService("STRINGTOKEN");
+        //private readonly LogService toggleService = new LogService("STRINGTOKEN");
 
 
         #endregion
@@ -36,7 +39,7 @@ namespace MooBoo.ViewModel
             windowHooker.ActiveWindowChanged += OnActiveWindowChanged;
             windowHooker.Init();
 
-            Scheduler.Instance.Schedule("ToggleServiceSender", TimeSpan.FromSeconds(20), OnSendToToggleService);
+            // Scheduler.Instance.Schedule("ToggleServiceSender", TimeSpan.FromSeconds(20), OnSendToToggleService);
         }
 
         #endregion
@@ -48,7 +51,7 @@ namespace MooBoo.ViewModel
             get { return Icons.TrayIcon; }
         }
 
-        
+
         public string ApiTokenProperty
         {
             get
@@ -56,9 +59,10 @@ namespace MooBoo.ViewModel
                 try
                 {
                     var apiToken = Properties.Settings.Default["ApiToken"];
-                    
+
                     return apiToken.ToString();
-                } catch(Exception e)
+                }
+                catch (Exception e)
                 { }
                 return string.Empty;
             }
@@ -76,42 +80,54 @@ namespace MooBoo.ViewModel
 
         private void OnActiveWindowChanged(object sender, ActiveWindowChangedEventArgs e)
         {
-            lock (locker)
+            if (e.ProcessFileName == string.Empty)
             {
-                entries.Add(new WindowChangeEntry(e.ProcessFileName, "Good", DateTime.Now));
+                return;
             }
+            var current = new WindowChangeEntry(e.ProcessFileName, "Category", DateTime.Now);
+            if (previousEntry != null)
+            {
+                DataProvider.Instance.Create(new LogItem
+                {
+                    FileName = previousEntry.FileName,
+                    Start = previousEntry.SwitchToTime,
+                    Stop = current.SwitchToTime
+                });
+            }
+
+            previousEntry = current;
         }
 
         //TODO remove this logic from here to MooBoo.ToggleWrapper
         //TODO redesign begin-end period calculation algorithm
-        private void OnSendToToggleService()
-        {
-            List<WindowChangeEntry> entriesToProcess = null;
-            var time = DateTime.Now;
-            lock (locker)
-            {
-                entries = entries.Where(e => e.SwitchToTime > lastToggleUpdate).ToList();
-                entriesToProcess = entries.ToList();
-            }
-            var count = entriesToProcess.Count;
+        //private void OnSendToToggleService()
+        //{
+        //    List<WindowChangeEntry> entriesToProcess = null;
+        //    var time = DateTime.Now;
+        //    lock (locker)
+        //    {
+        //        entries = entries.Where(e => e.SwitchToTime > lastToggleUpdate).ToList();
+        //        entriesToProcess = entries.ToList();
+        //    }
+        //    var count = entriesToProcess.Count;
 
-            for (var i = 0; i < count - 1; i++)
-            {
-                toggleService.Add(
-                    entriesToProcess[i].FileName,
-                    entriesToProcess[i].SwitchToTime,
-                    entriesToProcess[i + 1].SwitchToTime,
-                    entriesToProcess[i].Category == "Good");
-            }
-            toggleService.Add(entriesToProcess[count].FileName,
-                    entriesToProcess[count].SwitchToTime,
-                    time,
-                    entriesToProcess[count].Category == "Good");
+        //    for (var i = 0; i < count - 1; i++)
+        //    {
+        //        toggleService.Add(
+        //            entriesToProcess[i].FileName,
+        //            entriesToProcess[i].SwitchToTime,
+        //            entriesToProcess[i + 1].SwitchToTime,
+        //            entriesToProcess[i].Category == "Good");
+        //    }
+        //    toggleService.Add(entriesToProcess[count].FileName,
+        //            entriesToProcess[count].SwitchToTime,
+        //            time,
+        //            entriesToProcess[count].Category == "Good");
 
-        }
+        //}
 
 
-        
+
         #endregion
 
         #region INPC
