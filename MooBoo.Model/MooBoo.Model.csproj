@@ -41,6 +41,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="DataLayer\Category.cs" />
+    <Compile Include="DataLayer\DataObject.cs" />
     <Compile Include="DataLayer\LogItem.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

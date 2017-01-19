@@ -1,12 +1,7 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using global::Toggl.Services;
 
 namespace Mooboo.ToggleWrapper.Services
 {
-    using global::Toggl.QueryObjects;
     using global::Toggl.Services;
     using Toggl;
 
