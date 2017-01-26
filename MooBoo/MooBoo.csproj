@@ -59,21 +59,19 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
-    <Page Include="View\MooBooTrayApp.xaml">
-      <Generator>MSBuild:Compile</Generator>
-      <SubType>Designer</SubType>
-    </Page>
     <Compile Include="App.xaml.cs">
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="Model\WindowChangeEntry.cs" />
+    <Compile Include="Properties\Annotations1.cs" />
+    <Compile Include="UiSpecific\RelayCommand.cs" />
+    <Compile Include="ViewModel\MooBooApplicationViewModel.cs" />
     <Compile Include="Properties\Annotations.cs" />
-    <Compile Include="Utility\Scheduler.cs" />
-    <Compile Include="ViewModel\MooBooTrayAppViewModel.cs" />
-    <Compile Include="View\MooBooTrayApp.xaml.cs">
-      <DependentUpon>MooBooTrayApp.xaml</DependentUpon>
-      <SubType>Code</SubType>
+    <Compile Include="ViewModel\ToggleModuleSettingsViewModel.cs" />
+    <Compile Include="ViewModel\ViewModelBase.cs" />
+    <Compile Include="View\ToggleSettingsView.xaml.cs">
+      <DependentUpon>ToggleSettingsView.xaml</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>
@@ -133,6 +131,12 @@
       <Project>{a17eaa85-b11f-45f1-8f32-e7d75f01a054}</Project>
       <Name>Mooboo.Utilities</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Page Include="View\ToggleSettingsView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

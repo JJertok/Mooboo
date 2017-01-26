@@ -1,0 +1,45 @@
+﻿<Window x:Class="MooBoo.View.ToggleSettingsView"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:MooBoo.View"
+        mc:Ignorable="d"
+        Title= "Settings"
+        WindowStyle="ToolWindow"
+        Height="100"
+        Width="400"
+        ResizeMode="NoResize">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="4*"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+
+        <!--Text row for key input-->
+        <TextBlock
+            Margin="5"
+            Grid.Column="0"
+            Grid.Row="0"
+            Text="Token key:"/>
+        <TextBox 
+            Margin="5"
+            Grid.Row="0"
+            Grid.Column="1" 
+            TextWrapping="Wrap" 
+            Text="{Binding Path=ApiTokenProperty, UpdateSourceTrigger=PropertyChanged,  Mode=TwoWay}"/>
+        
+        <!--ButtonsRow-->
+        <Button 
+            Margin="5" 
+            Grid.Row="1"
+            Grid.Column="1"
+            Width="50"
+            HorizontalAlignment="Right"
+            Command="{Binding OkCommand}" Content="Ok"/>
+    </Grid>
+</Window>

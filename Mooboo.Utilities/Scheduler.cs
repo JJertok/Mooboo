@@ -1,21 +1,23 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Threading;
+using Mooboo.Utilities;
 
 namespace MooBoo.Utilities
 {
-    public class Scheduler
+    public class Scheduler : Singleton<Scheduler>
     {
         #region Fields
-        private static Scheduler _instance;
-        private readonly Dictionary<string, Timer> timers = new Dictionary<string, Timer>();
+
+        private readonly Dictionary<string, Timer> _timers = new Dictionary<string, Timer>();
+
         #endregion
 
         #region Methods
 
         public bool Schedule(string key, TimeSpan period, Action func)
         {
-            if (timers.ContainsKey(key))
+            if (_timers.ContainsKey(key))
             {
                 return false;
             }
@@ -23,7 +25,7 @@ namespace MooBoo.Utilities
             {
                 func.Invoke();
             }, null, (int)period.TotalMilliseconds,(int) period.TotalMilliseconds);
-            timers.Add(key, timer);
+            _timers.Add(key, timer);
             
             
             return true;
@@ -31,13 +33,13 @@ namespace MooBoo.Utilities
 
         public bool Unschedule(string key)
         {
-            if (!timers.ContainsKey(key))
+            if (!_timers.ContainsKey(key))
             {
                 return false;
             }
-            var timer = timers[key];
+            var timer = _timers[key];
             timer.Dispose();
-            timers.Remove(key);
+            _timers.Remove(key);
             return true;
         }
 
@@ -48,9 +50,9 @@ namespace MooBoo.Utilities
         /// <returns>1 - if yes and running, 0 if yes and idle, -1 if no</returns>
         public int IsScheduled(string key)
         {
-            if (timers.ContainsKey(key))
+            if (_timers.ContainsKey(key))
             {
-                var timer = timers[key];
+                var timer = _timers[key];
                 throw new NotImplementedException();
                 //if (timer.IsEnabled)
                 if(true)
@@ -67,19 +69,5 @@ namespace MooBoo.Utilities
 
         #endregion
 
-        #region Singleton
-
-        public static Scheduler Instance
-        {
-            get
-            {
-                if (_instance == null)
-                {
-                    _instance = new Scheduler();
-                }
-                return _instance;
-            }
-        }
-        #endregion
     }
 }

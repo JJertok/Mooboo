@@ -2,8 +2,6 @@
 using Mooboo.ToggleWrapper.Services;
 using Toggl;
 using Toggl.Extensions;
-using System.Collections;
-using System.Collections.Generic;
 using MooBoo.Utilities;
 
 namespace ToggleSandbox.Services

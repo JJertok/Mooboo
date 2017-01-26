@@ -12,3 +12,5 @@ D:\MyProjects\MooBoo\MooBoo.Resources\obj\Debug\MooBoo.Resources.Icons.resources
 D:\MyProjects\MooBoo\MooBoo.Resources\obj\Debug\MooBoo.Resources.csproj.GenerateResource.Cache
 D:\MyProjects\MooBoo\MooBoo.Resources\obj\Debug\MooBoo.Resources.dll
 D:\MyProjects\MooBoo\MooBoo.Resources\obj\Debug\MooBoo.Resources.pdb
+D:\MyProjects\MooBoo\MooBoo.Resources\obj\Debug\MooBoo.Resources.StaticStrings.resources
+D:\MyProjects\MooBoo\MooBoo.Resources\obj\Debug\MooBoo.Resources.UiStrings.resources
