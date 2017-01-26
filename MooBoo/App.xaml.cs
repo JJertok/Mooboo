@@ -20,7 +20,6 @@ namespace MooBoo
             base.OnStartup(e);
 
             var app = new MooBooApplicationViewModel();
-            app.Init();
             app.Exit += OnAppExit;
 
         }

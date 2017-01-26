@@ -1,10 +1,9 @@
 ﻿using System;
+using Toggl;
+using Toggl.Services;
 
-namespace Mooboo.ToggleWrapper.Services
+namespace ToggleSandbox.Services
 {
-    using global::Toggl.Services;
-    using Toggl;
-
     public class BaseAPI
     {
         protected WorkspaceService WorkspaceService;

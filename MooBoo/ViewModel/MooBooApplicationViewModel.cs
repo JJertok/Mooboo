@@ -4,6 +4,7 @@ using MooBoo.ActiveWindowHook;
 using MooBoo.DataAcessLayer;
 using MooBoo.Model;
 using MooBoo.Model.DataLayer;
+using ToggleSandbox.Services;
 
 namespace MooBoo.ViewModel
 {
@@ -14,23 +15,21 @@ namespace MooBoo.ViewModel
         private readonly ToggleModuleSettingsViewModel _settingsViewModel;
         private readonly ActiveWindowHooker _windowHooker;
         private WindowChangeEntry _previousEntry;
+        private LogService _logService;
 
         public MooBooApplicationViewModel() : base(null)
         {
-            this._settingsViewModel = new ToggleModuleSettingsViewModel(this);
+            _settingsViewModel = new ToggleModuleSettingsViewModel(this);
+            InitTrayIcon();
             _windowHooker = new ActiveWindowHooker();
             _windowHooker.ActiveWindowChanged += OnActiveWindowChanged;
             _windowHooker.Init();
+            InitLogService();
         }
 
         #endregion
 
         #region Methods
-
-        public void Init()
-        {
-            InitTrayIcon();
-        }
 
         private NotifyIcon InitTrayIcon()
         {
@@ -85,6 +84,21 @@ namespace MooBoo.ViewModel
             }
 
             _previousEntry = current;
+
+            InitLogService();
+            _logService.Add(_previousEntry.FileName,_previousEntry.SwitchToTime,current.SwitchToTime,true);
+        }
+
+        private void InitLogService()
+        {
+            if (string.IsNullOrEmpty(_settingsViewModel.ApiToken) ||
+                    (_logService!=null && 
+                    _logService.GetToken() == _settingsViewModel.ApiToken)
+               )
+            {
+                return;
+            }
+            _logService = new LogService(_settingsViewModel.ApiToken);
         }
 
         #endregion

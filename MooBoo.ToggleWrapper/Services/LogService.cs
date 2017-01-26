@@ -1,5 +1,4 @@
 ﻿using System;
-using Mooboo.ToggleWrapper.Services;
 using Toggl;
 using Toggl.Extensions;
 using MooBoo.Utilities;
@@ -12,35 +11,45 @@ namespace ToggleSandbox.Services
         public DateTime Start { get; set; }
         public DateTime Stop { get; set; }
     }
+
     public class LogService : BaseAPI
     {
-        private LogBuffer logBuffer = new LogBuffer();
+        private readonly LogBuffer _logBuffer = new LogBuffer();
+        private readonly string _token;
+
         public LogService(string token) : base(token)
         {
-            Scheduler.Instance.Schedule("syncToggle", TimeSpan.FromSeconds(5), () => { Flush(); });
+            _token = token;
+            Scheduler.Instance.Schedule("syncToggle", TimeSpan.FromSeconds(5), Flush);
         }
         
         public void Add(string Name, DateTime start, DateTime stop, bool IsGood)
         {
-            logBuffer.Add(new Log
+            _logBuffer.Add(new Log
             {
                 Name = Name, 
                 Start = start,
                 Stop = stop
             });
         }
+
+        public string GetToken()
+        {
+            return _token;
+        }
+
         public void Add(Log log)
         {
-            logBuffer.Add(log);
+            _logBuffer.Add(log);
         }
 
         private void Flush()
         {
-            if (logBuffer.IsEmpty) return;
+            if (_logBuffer.IsEmpty) return;
 
             Scheduler.Instance.Schedule("request", TimeSpan.FromSeconds(1), () =>
             {
-                var entity = logBuffer.Pop();
+                var entity = _logBuffer.Pop();
                 var attempts = 0;
                 var attemptSuccess = false;
                 do
@@ -66,28 +75,9 @@ namespace ToggleSandbox.Services
                     }
                 } while (attempts < 3 && !attemptSuccess);
                 
-                if (logBuffer.IsEmpty) Scheduler.Instance.Unschedule("request");
+                if (_logBuffer.IsEmpty) Scheduler.Instance.Unschedule("request");
             });
         }
-
-
-        
-
-
-        //public void Add(string description, DateTime start, DateTime stop, bool isGood)
-        //{
-        //    logs.Add(new TimeEntry()
-        //    {
-        //        IsBillable = true,
-        //        CreatedWith = "Mooboo",
-        //        Duration = Convert.ToInt32((stop - start).TotalSeconds),
-        //        Start = start.ToIsoDateStr(),
-        //        Stop = stop.ToIsoDateStr(),
-        //        WorkspaceId = DefaultWorkspaceId,
-        //        ProjectId = isGood ? GoodProjectId : BadProjectId,
-        //        Description = description
-        //    });
-        //}
-        
+  
     }
 }

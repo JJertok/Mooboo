@@ -31,7 +31,7 @@
             Grid.Row="0"
             Grid.Column="1" 
             TextWrapping="Wrap" 
-            Text="{Binding Path=ApiTokenProperty, UpdateSourceTrigger=PropertyChanged,  Mode=TwoWay}"/>
+            Text="{Binding Path=ApiToken, UpdateSourceTrigger=PropertyChanged,  Mode=TwoWay}"/>
         
         <!--ButtonsRow-->
         <Button 

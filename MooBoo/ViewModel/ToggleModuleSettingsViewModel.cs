@@ -34,7 +34,7 @@ namespace MooBoo.ViewModel
 
         #region Properties
 
-        public string ApiTokenProperty
+        public string ApiToken
         {
             get
             {
