@@ -9,6 +9,10 @@ namespace MooBoo.DataAcessLayer.SqliteDataProvider
         public bool Create(Category obj)
         {
             throw new System.NotImplementedException();
+            using (var connection = SqliteDataBaseProvider.GetConnection())
+            {
+                
+            }
         }
 
         public Category Read(object id)

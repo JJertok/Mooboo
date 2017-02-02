@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Windows;
+using MooBoo.DataAcessLayer.SqliteDataProvider;
 using MooBoo.ViewModel;
 
 namespace MooBoo
@@ -19,9 +20,13 @@ namespace MooBoo
         {
             base.OnStartup(e);
 
+#if DEBUG
+            SqliteDataBaseProvider.GetConnection();
+#endif
+
             var app = new MooBooApplicationViewModel();
             app.Exit += OnAppExit;
-
+            
         }
 
         /// <summary>

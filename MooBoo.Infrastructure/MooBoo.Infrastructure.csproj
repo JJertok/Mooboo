@@ -43,7 +43,6 @@
   <ItemGroup>
     <Compile Include="Interfaces\DataLayer\DataObject.cs" />
     <Compile Include="Interfaces\DataLayer\ICloneable.cs" />
-    <Compile Include="Interfaces\DataLayer\IDbConnection.cs" />
     <Compile Include="Interfaces\DataLayer\IRepository.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

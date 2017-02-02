@@ -63,7 +63,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="SqliteDataProvider\SqliteBaseProvider.cs" />
+    <Compile Include="SqliteDataProvider\SqliteDataBaseProvider.cs" />
     <Compile Include="SqliteDataProvider\SqliteCategoryProvider.cs" />
     <Compile Include="SqliteDataProvider\SqliteDataProvider.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
