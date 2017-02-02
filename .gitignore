@@ -1,8 +1,11 @@
 /packages
 /MooBoo/bin
 /MooBoo/obj
-/MooBoo.Demo/bin
-/MooBoo.Demo/obj
+/MooBoo.Demo/bin/*
+/MooBoo.Demo/obj/*
 */*.cache
-*/obj
-*/bin
+**/obj/
+**/bin/
+.vs/*
+*.chache
+.sonarqube/

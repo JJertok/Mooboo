@@ -2,6 +2,7 @@
 using System.Windows.Forms;
 using MooBoo.ActiveWindowHook;
 using MooBoo.DataAcessLayer;
+using MooBoo.DataAcessLayer.SqliteDataProvider;
 using MooBoo.Model;
 using MooBoo.Model.DataLayer;
 using ToggleSandbox.Services;
@@ -75,7 +76,7 @@ namespace MooBoo.ViewModel
             var current = new WindowChangeEntry(e.ProcessFileName, "Category", DateTime.Now);
             if (_previousEntry != null)
             {
-                DataProvider.Instance.Create(new LogItem
+                SqliteDataProvider.Instance.Create(new LogItem
                 {
                     FileName = _previousEntry.FileName,
                     Start = _previousEntry.SwitchToTime,

@@ -30,6 +30,7 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Microsoft.Build.Framework" />
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
@@ -40,16 +41,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Interfaces\DataLayer\ICategoryProvider.cs" />
-    <Compile Include="Interfaces\DataLayer\ICrudProvider.cs" />
-    <Compile Include="Interfaces\DataLayer\IDataProvider.cs" />
+    <Compile Include="Interfaces\DataLayer\DataObject.cs" />
+    <Compile Include="Interfaces\DataLayer\ICloneable.cs" />
+    <Compile Include="Interfaces\DataLayer\IDbConnection.cs" />
+    <Compile Include="Interfaces\DataLayer\IRepository.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\MooBoo.Model\MooBoo.Model.csproj">
-      <Project>{449C3C76-8520-4973-9384-3DCAE8E1328E}</Project>
-      <Name>MooBoo.Model</Name>
-    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

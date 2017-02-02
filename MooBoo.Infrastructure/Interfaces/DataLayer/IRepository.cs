@@ -1,6 +1,6 @@
 ﻿namespace MooBoo.Infrastructure.Interfaces.DataLayer
 {
-    public interface ICrudProvider<T>
+    public interface IRepository<T> where T : DataObject
     {
         bool Create(T obj);
         T Read(object id);

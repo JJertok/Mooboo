@@ -41,9 +41,14 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="DataLayer\Category.cs" />
-    <Compile Include="DataLayer\DataObject.cs" />
     <Compile Include="DataLayer\LogItem.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\MooBoo.Infrastructure\MooBoo.Infrastructure.csproj">
+      <Project>{8ACD5CCC-14BC-4BCC-B68D-DD23E420D6A3}</Project>
+      <Name>MooBoo.Infrastructure</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
