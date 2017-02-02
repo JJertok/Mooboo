@@ -6,7 +6,7 @@ namespace MooBoo.Model.DataLayer
     {
         public static string Token = "APPLICATION";
 
-        public int CategoryId { get; set; }
+        public int CategoryId { get; set; } = -1;
         public Category Category { get; set; }
         public string FileName { get; set; }
 

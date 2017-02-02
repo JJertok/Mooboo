@@ -15,5 +15,7 @@ namespace MooBoo.Model.DataLayer
                 Id = Id
             };
         }
+
+        public static string Token = "CATEGORY";
     }
 }

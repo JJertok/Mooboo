@@ -1,11 +1,12 @@
 ﻿using System;
+using System.Linq;
 using System.Windows.Forms;
 using MooBoo.ActiveWindowHook;
-using MooBoo.DataAcessLayer;
 using MooBoo.DataAcessLayer.SqliteDataProvider;
 using MooBoo.Model;
 using MooBoo.Model.DataLayer;
 using ToggleSandbox.Services;
+using Application = MooBoo.Model.DataLayer.Application;
 
 namespace MooBoo.ViewModel
 {
@@ -73,12 +74,20 @@ namespace MooBoo.ViewModel
             {
                 return;
             }
-            var current = new WindowChangeEntry(e.ProcessFileName, "Category", DateTime.Now);
+            var app = SqliteApplicationProvider.Instance.ReadAll().FirstOrDefault(a => a.FileName == e.ProcessFileName);
+            if (app == null)
+            {
+                app = SqliteApplicationProvider.Instance.Create(new Application
+                {
+                    FileName = e.ProcessFileName,
+                });
+            }
+            var current = new WindowChangeEntry(app.Id, "Category", DateTime.Now);
             if (_previousEntry != null)
             {
                 SqliteDataProvider.Instance.Create(new LogItem
                 {
-                    FileName = _previousEntry.FileName,
+                    ApplicationId = _previousEntry.ApplicationId,
                     Start = _previousEntry.SwitchToTime,
                     Stop = current.SwitchToTime
                 });
@@ -87,13 +96,13 @@ namespace MooBoo.ViewModel
             _previousEntry = current;
 
             InitLogService();
-            _logService.Add(_previousEntry.FileName,_previousEntry.SwitchToTime,current.SwitchToTime,true);
+            _logService.Add(SqliteApplicationProvider.Instance.Read(_previousEntry.ApplicationId).FileName, _previousEntry.SwitchToTime, current.SwitchToTime, true);
         }
 
         private void InitLogService()
         {
             if (string.IsNullOrEmpty(_settingsViewModel.ApiToken) ||
-                    (_logService!=null && 
+                    (_logService != null &&
                     _logService.GetToken() == _settingsViewModel.ApiToken)
                )
             {

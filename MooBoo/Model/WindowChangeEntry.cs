@@ -6,9 +6,9 @@ namespace MooBoo.Model
     {
 
         #region Constructor
-        public WindowChangeEntry(string fileName, string category, DateTime switchToTime)
+        public WindowChangeEntry(int applicationId, string category, DateTime switchToTime)
         {
-            FileName = fileName;
+            ApplicationId = applicationId;
             Category = category;
             SwitchToTime = switchToTime;
         }
@@ -17,7 +17,7 @@ namespace MooBoo.Model
 
         #region Properties
 
-        public string FileName { get; private set; }
+        public int ApplicationId { get; private set; }
         public string Category { get; private set; }
         public DateTime SwitchToTime { get; private set; }
 

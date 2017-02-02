@@ -1,6 +1,6 @@
 ﻿using System;
+using System.Threading;
 using System.Windows;
-using MooBoo.DataAcessLayer.SqliteDataProvider;
 using MooBoo.ViewModel;
 
 namespace MooBoo
@@ -19,10 +19,7 @@ namespace MooBoo
         protected override void OnStartup(StartupEventArgs e)
         {
             base.OnStartup(e);
-
-#if DEBUG
-            SqliteDataBaseProvider.GetConnection();
-#endif
+            Thread.CurrentThread.CurrentCulture = System.Globalization.CultureInfo.InvariantCulture;
 
             var app = new MooBooApplicationViewModel();
             app.Exit += OnAppExit;
